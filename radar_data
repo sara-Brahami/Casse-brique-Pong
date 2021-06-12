@@ -1,0 +1,28 @@
+import pandas as pd
+import matplotlib as plt
+import seaborn as sns
+df=pd.read_csv('radars.csv')
+df.head()
+#df=df.pop('id')
+#print(df)
+df.shape
+
+#drop() function to remove a column
+df.drop('id', inplace=True, axis=1)
+df.drop('date_heure_creation', inplace=True, axis=1)
+df.drop('date_heure_dernier_changement', inplace=True, axis=1)
+df.head()
+
+
+#drop rows
+#eliminer les rows dont  lequel on a pas les données 
+
+df=df.dropna(axis=1)
+df.head()
+
+#plot  
+df['latitude'].hist()
+
+pd.plotting
+
+sns.pairplot(df)
